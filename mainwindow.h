@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QNetworkReply>
+#include <QNetworkAccessManager>
 #include <string>
 
 namespace Ui {
@@ -23,6 +24,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QNetworkReply *m_currentReply;
+    QNetworkAccessManager m_networkAccessManager;
+
 };
 
 #endif // MAINWINDOW_H

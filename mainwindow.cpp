@@ -44,9 +44,9 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 void MainWindow::onResult(QNetworkReply* reply) {
-    /*if (m_currentReply->error() != QNetworkReply::NoError) {
+    if (m_currentReply->error() != QNetworkReply::NoError) {
         return;
-    }*/
+    }
 
     QJsonDocument a;
     a = QJsonDocument::fromJson( reply->readAll() );
