@@ -23,4 +23,4 @@ https://wiki.qt.io/Deploy_an_Application_on_Windows
 2. xSlendiX (UI and code)
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the DBAD license - see the [LICENSE.md](LICENSE.md) file for details
