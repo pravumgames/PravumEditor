@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QUrl>
+
 #include <string>
 
 namespace Ui {
@@ -19,8 +22,12 @@ public:
     ~MainWindow();
 
 private slots:
+    void onResult();
+
     void on_pushButton_clicked();
-    void onResult(QNetworkReply* reply);
+    void on_openGithub_clicked();
+
+    void on_openFile_clicked();
 
 private:
     Ui::MainWindow *ui;

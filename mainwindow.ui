@@ -67,7 +67,7 @@ QPushButton:pressed {
      <string>New Project</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="openFile">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -160,7 +160,7 @@ QPushButton:pressed {
      <string notr="true">color: white;</string>
     </property>
     <property name="text">
-     <string>Cannot fetch data!</string>
+     <string>Cannot fetch data! (Internet is off or server is down.)</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -189,6 +189,47 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="openGithub">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { 
+	background-color: #424242; 
+	color: white; 
+	border:none;
+	text-align: left;
+}
+
+QPushButton:hover { 
+	background-color:#424242; 
+	color: rgb(217, 217, 217); 
+	border:none;
+	text-align: left;
+}
+
+QPushButton:pressed { 
+	background-color: #424242; 
+	color: white; 
+	border:none;
+	text-align: left;
+}</string>
+    </property>
+    <property name="text">
+     <string>Open On GitHub</string>
     </property>
    </widget>
   </widget>

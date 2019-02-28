@@ -5,10 +5,7 @@
 #include <QtGui>
 #include <QtDebug>
 
-#include <QNetworkReply>
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QUrl>
+#include <QDesktopServices>
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -32,40 +29,40 @@ MainWindow::MainWindow(QWidget *parent) :
     setStyleSheet("");
     this->setWindowFlags(this->windowFlags() | Qt::NoDropShadowWindowHint);
 
-    QNetworkAccessManager networkManager;
-
-    QUrl url("https://xslendix.github.io/PravumEngineAPI/changelog.json");
+    QUrl url("http://well-chosen-correct.000webhostapp.com/changelog.json");
     QNetworkRequest request;
     request.setUrl(url);
 
-    QNetworkReply* currentReply = networkManager.get(request);
+    m_currentReply = m_networkAccessManager.get(request);
 
-    connect(&networkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT (onResult(QNetworkReply*)));
+    connect(m_currentReply, SIGNAL(finished()), this, SLOT (onResult()));
 }
 
-void MainWindow::onResult(QNetworkReply* reply) {
+void MainWindow::onResult() {
     if (m_currentReply->error() != QNetworkReply::NoError) {
         return;
     }
 
     QJsonDocument a;
-    a = QJsonDocument::fromJson( reply->readAll() );
+    a = QJsonDocument::fromJson( m_currentReply->readAll() );
 
-    qDebug() << reply->readAll();
+    qDebug() << m_currentReply->readAll();
 
     QJsonObject json_obj=a.object();
     QVariantMap json_map = json_obj.toVariantMap();
 
-    QString changes = json_map["changes"].toString();
+    QString changesz = json_map["changes"].toString();
 
-    qDebug() << changes;
+    qDebug() << changesz;
 
-    if (changes != "") {
+    if (changesz == "") {
         return;
     } else {
-        ui->changes->setText(changes);
+        ui->changes->setText(changesz);
     }
 
+    m_currentReply->deleteLater();
+    m_currentReply = nullptr;
 }
 
 MainWindow::~MainWindow()
@@ -77,4 +74,15 @@ void MainWindow::on_pushButton_clicked()
     EditorWindow* editwindow = new EditorWindow(this);
     editwindow->show();
     this->hide();
+}
+
+void MainWindow::on_openGithub_clicked()
+{
+    QString link = "https://github.com/xslendix/PravumEditor";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void MainWindow::on_openFile_clicked()
+{
+
 }
