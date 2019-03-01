@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    this -> setFixedSize(493,300);
+
     QPalette pal = centralWidget()->palette();
     pal.setColor(centralWidget()->backgroundRole(), 0x424242);
     centralWidget()->setPalette(pal);
