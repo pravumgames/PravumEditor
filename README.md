@@ -6,20 +6,21 @@ This is the official editor for the PravumEngine.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 ### Prerequisites
 
-1. Qt Creator
-2. Qt5
+* Qt Creator
+* Qt5
 
 ### Installing
 
-1. Open project in Qt Creator
-2. Click the run button
+* Open project in Qt Creator
+* Click the run button
+
 ## Deployement
 
 https://wiki.qt.io/Deploy_an_Application_on_Windows
 ## Authors
 
-1. Daniel Nesov (Initial idea, main engine)
-2. xSlendiX (UI and code)
+* Daniel Nesov (Initial idea, main engine)
+* xSlendiX (UI and code)
 
 ## License
 
