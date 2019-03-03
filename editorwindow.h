@@ -26,6 +26,7 @@ private:
     Ui::EditorWindow *ui;
     void createActions();
     void createMenus();
+    void loadSubWindow (QWidget *widget, QString title);
 };
 
 #endif // EDITORWINDOW_H

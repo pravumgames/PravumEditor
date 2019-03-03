@@ -30,15 +30,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     mainwindow.cpp \
-    editorwindow.cpp
+    editorwindow.cpp \
+    actionhistorymdi.cpp
 
 HEADERS += \
         mainwindow.h \
-    editorwindow.h
+    editorwindow.h \
+    actionhistorymdi.h
 
 FORMS += \
         mainwindow.ui \
-    editorwindow.ui
+    editorwindow.ui \
+    actionhistorymdi.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
